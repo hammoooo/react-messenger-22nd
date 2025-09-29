@@ -155,11 +155,11 @@ export default function ChatTextarea({
       rows={1}
       placeholder="메시지를 입력하세요"
       className="
-        block w-full !px-2
+        block w-full 
         h-auto min-h-[22px] max-h-[44px]   /* 1~2줄 */
-        resize-none bg-transparent p-0 box-border
+        resize-none bg-transparent !p-3 box-border
         leading-[22px] text-body-2 text-gray-800 placeholder:text-gray-500
-        outline-none
+        outline-none overflow-y-auto no-scrollbar
       "
       value={value}
       onChange={(e) => onChange(e.target.value)}

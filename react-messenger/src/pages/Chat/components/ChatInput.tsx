@@ -139,9 +139,9 @@ export default function ChatInput() {
       {/* 바탕 박스: 375×84 */}
       <div className="mx-auto w-[375px] h-[84px] bg-white">
         {/* 좌우 가장자리 여백 추가 */}
-        <div className="h-full px-4">
+        <div className="h-full !px-2">
           {/* 3열: 좌 44px / 중앙 1fr / 우 44px + 동일 간격 */}
-          <div className="grid h-full grid-cols-[44px_1fr_44px] items-center gap-x-1">
+          <div className="grid h-full grid-cols-[44px_1fr_44px] items-center gap-x-0">
             {/* + 버튼 */}
             <button
               type="button"

@@ -11,7 +11,7 @@ import Chat from "./pages/Chat/Chat";
 
 export default function App() {
   return (
-    <div className="mx-auto w-[375px] h-[812px] min-h-screen bg-white overflow-hidden">
+    <div className="mx-auto w-[375px] h-[812px] bg-white ">
       <Routes>
         <Route element={<FriendsLayout />}>
           <Route path="/" element={<FriendsList />} />

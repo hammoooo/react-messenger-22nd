@@ -11,7 +11,7 @@ export default function ChatHeader() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => nav(-1)}
-            className="rounded p-1 active:scale-95"
+            className="relative z-10 rounded p-1 active:scale-95"
           >
             <img
               src="/images/profile/profileLeftArrow.svg"
@@ -19,7 +19,7 @@ export default function ChatHeader() {
             />
           </button>
         </div>
-        <h1 className="absolute inset-0 flex items-center justify-center text-body-1 !font-semibold text-gray-800">
+        <h1 className="pointer-events-none absolute inset-0 flex items-center justify-center !text-[18px] !font-semibold text-gray-800">
           {title}
         </h1>
         <div className="flex items-center gap-4">
