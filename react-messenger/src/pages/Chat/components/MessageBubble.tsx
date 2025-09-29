@@ -18,23 +18,29 @@ export default function MessageBubble({ m }: { m: Message }) {
 
   const time = m.createdAt ? toTimeLabelChat(m.createdAt) : "";
 
+  const bubbleBase =
+    "w-fit max-w-[180px] rounded-lg !py-2 !px-4 text-body-6 text-gray-900 whitespace-pre-line break-words";
+
   if (isMine) {
     return (
       <div className="mb-3 flex w-full items-end justify-end gap-2 px-4">
         <time className="text-caption text-gray-600">{time}</time>
-        <div className=" rounded-lg bg-yellow-500 !py-2 !px-4 text-body-6 text-gray-900 whitespace-pre-line">
+        {/* <div className=" rounded-lg bg-yellow-500 !py-2 !px-4 text-body-6 text-gray-900 whitespace-pre-line">
           {m.text}
-        </div>
+        </div> */}
+        <div className={`${bubbleBase} bg-yellow-500`}>{m.text}</div>
       </div>
     );
   }
 
   return (
     <div className="mb-3 flex w-full items-end gap-2 px-4">
-      <img src={sender?.avatar} className="h-9 w-9 object-cover" />
-      <div className=" rounded-lg bg-gray-200 !py-2 !px-4 text-body-6 text-gray-900 whitespace-pre-line">
+      {/* <img src={sender?.avatar} className="h-9 w-9 object-cover" /> */}
+      <img src="/images/avatar.svg" className="h-9 w-9 object-cover" />
+      {/* <div className=" rounded-lg bg-gray-300 !py-2 !px-4 text-body-6 text-gray-900 whitespace-pre-line">
         {m.text}
-      </div>
+      </div> */}
+      <div className={`${bubbleBase} bg-gray-300`}>{m.text}</div>
       <time className="text-caption text-gray-600">{time}</time>
     </div>
   );

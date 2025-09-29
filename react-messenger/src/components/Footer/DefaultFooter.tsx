@@ -20,7 +20,7 @@ export function DefaultFooter({
   ];
 
   return (
-    <nav className="sticky bottom-0 z-10 w-[375px] bg-transparent">
+    <nav className="fixed inset-x-0 bottom-0 z-10 bg-transparent">
       <div className="rounded-t-[16px] bg-yellow-800">
         <div className="h-[88px] !px-7 !pt-4 pb-[env(safe-area-inset-bottom)]">
           <div className="grid grid-cols-5 gap-x-[15px] h-14 w-full">

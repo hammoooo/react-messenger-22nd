@@ -8,16 +8,14 @@ export default function FriendListLayout() {
     "friends" | "chat" | "openchat" | "shopping" | "more"
   >("friends");
   return (
-    <div className="w-full h-full">
-      <div className="!px-4">
-        <Header />
+    <div className="w-full min-h-screen flex flex-col">
+      <Header />
 
-        {/* <hr className="!mx-4 !my-4 h-px bg-gray-400 origin-top scale-y-10" /> */}
+      {/* <hr className="!mx-4 !my-4 h-px bg-gray-400 origin-top scale-y-10" /> */}
 
-        <main>
-          <Outlet />
-        </main>
-      </div>
+      <main className="flex-1 overflow-y-auto min-h-0">
+        <Outlet />
+      </main>
 
       <DefaultFooter active={tab} onTab={setTab} />
     </div>

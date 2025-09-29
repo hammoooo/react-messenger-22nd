@@ -68,7 +68,7 @@ export default function FriendsList() {
   );
 
   return (
-    <div className="select-none bg-white px-4">
+    <div className="select-none bg-white !px-4">
       {/* 내 프로필 */}
       <div className="pb-2 !mb-3">
         <div className="flex items-center justify-between px-4">
@@ -77,8 +77,8 @@ export default function FriendsList() {
         </div>
       </div>
 
-      <hr className="!mx-2 !my-2 h-px bg-gray-400 origin-top scale-y-10" />
-
+      {/* <hr className="!mx-2 !my-2 h-px bg-gray-400 origin-top scale-y-10" /> */}
+      <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-2" />
       {/* 업데이트한 프로필 */}
       <div className="pt-1">
         <FriendsHeader
@@ -96,8 +96,7 @@ export default function FriendsList() {
           ))}
       </div>
 
-      <hr className="!mx-2 !my-2 h-px bg-gray-400 origin-top scale-y-10" />
-
+      <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-2" />
       {/* 생일인 친구 */}
       <div className="pt-1">
         <FriendsHeader
@@ -137,16 +136,19 @@ export default function FriendsList() {
         const isCollapsed = !!collapsed[key];
 
         return (
-          <section className="pt-10" key={`group-${key}`}>
-            <FriendsHeader
-              title={key}
-              count={list.length}
-              collapsibleKey={key}
-            />
+          <>
+            <section className="pt-10" key={`group-${key}`}>
+              <FriendsHeader
+                title={key}
+                count={list.length}
+                collapsibleKey={key}
+              />
 
-            {!isCollapsed &&
-              list.map((f) => <FriendsRow key={`${key}-${f.id}`} f={f} />)}
-          </section>
+              {!isCollapsed &&
+                list.map((f) => <FriendsRow key={`${key}-${f.id}`} f={f} />)}
+            </section>
+            <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-2" />
+          </>
         );
       })}
     </div>

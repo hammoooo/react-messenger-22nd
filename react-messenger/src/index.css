@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @import "tailwindcss/preflight";
 
+body {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @layer base {
   /* h1, */
   h2,
@@ -23,9 +35,9 @@
   --font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 
   /* Yellow scale */
-  --color-yellow-800: #fdd000;
+  --color-yellow-800: #ffdd00;
   --color-yellow-700: #ffe957;
-  --color-yellow-600: #ffe584;
+  --color-yellow-600: #ffef84;
   --color-yellow-500: #ffe957; /* 실수하신듯 */
   --color-yellow-400: #fff2a0;
   --color-yellow-300: #fffae0;
@@ -36,7 +48,7 @@
   --color-gray-800: #222222;
   --color-gray-700: #666666;
   --color-gray-600: #888888;
-  --color-gray-500: #c9c9c9;
+  --color-gray-500: #9c9c9c;
   --color-gray-400: #d5d5d5;
   --color-gray-300: #e5e5e5;
   --color-gray-200: #f4f4f4;

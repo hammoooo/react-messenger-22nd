@@ -1,7 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export default function ChatHeader({ title }: { title?: string }) {
+export default function ChatHeader() {
   const nav = useNavigate();
+  const location = useLocation();
+  const { title } = (location.state ?? {}) as { title?: string };
+
   return (
     <header className="sticky top-0 z-10 !pt-2 backdrop-blur">
       <div className="relative flex items-center justify-between px-4 py-3 pt-[env(safe-area-inset-top)]">
@@ -15,9 +18,10 @@ export default function ChatHeader({ title }: { title?: string }) {
               className="h-6 w-6"
             />
           </button>
-          <h1 className="text-body-1 !font-semibold text-gray-800">{title}</h1>
         </div>
-
+        <h1 className="absolute inset-0 flex items-center justify-center text-body-1 !font-semibold text-gray-800">
+          {title}
+        </h1>
         <div className="flex items-center gap-4">
           <button className="h-6 w-6 active:scale-95">
             <img src="/images/magnifying.svg" alt="검색" />

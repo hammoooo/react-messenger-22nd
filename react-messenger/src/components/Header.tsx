@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="!mx-2 !my-3 flex justify-between items-center pt-[env(safe-area-inset-top)]">
+    <header className="!mx-4 !mb-3 flex justify-between items-center pt-[env(safe-area-inset-top)]">
       <h1 className="text-headline-1 !font-semibold text-gray-800 !text-2xl">
         친구
       </h1>
