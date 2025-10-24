@@ -6,7 +6,7 @@ export default function ChatHeader() {
   const { title } = (location.state ?? {}) as { title?: string };
 
   return (
-    <header className="sticky top-0 z-10 !pt-2 backdrop-blur">
+    <header className="sticky top-0 z-10 !pt-2 !px-4 backdrop-blur !mb-6">
       <div className="relative flex items-center justify-between px-4 py-3 pt-[env(safe-area-inset-top)]">
         <div className="flex items-center gap-3">
           <button

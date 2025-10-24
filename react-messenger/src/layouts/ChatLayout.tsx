@@ -6,12 +6,12 @@ import ChatInput from "@/pages/Chat/components/ChatInput";
 export default function ChatLayout() {
   return (
     <div className="w-full h-full bg-yellow-300">
-      <div className="!px-4">
+      <div>
         {/* <Notch /> */}
         <img src="/images/nnotch.svg" />
         <ChatHeader />
 
-        <main>
+        <main className="!pb-[calc(84px+env(safe-area-inset-bottom))]">
           <Outlet />
         </main>
       </div>

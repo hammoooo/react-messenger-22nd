@@ -29,9 +29,9 @@ export default function Chat() {
   }, [list.length]);
 
   return (
-    <div className="mx-auto w-full max-w-[375px] min-h-screen select-none bg-yellow-300">
+    <div className="mx-auto w-full max-w-[375px] min-h-screen bg-yellow-300">
       <div ref={ref} className=" overflow-y-auto !space-y-5">
-        <div className="h-2" />
+        {/* <div className="h-2" /> */}
 
         {isLoading ? (
           <p className="px-4 py-8 text-center text-gray-600">불러오는 중…</p>
@@ -39,7 +39,7 @@ export default function Chat() {
           list.map((m) => <MessageBubble key={m.id} m={m} />)
         )}
 
-        <div className="h-3" />
+        {/* <div className="h-3" /> */}
       </div>
     </div>
   );

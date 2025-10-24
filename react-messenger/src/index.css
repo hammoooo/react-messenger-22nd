@@ -9,25 +9,12 @@ body {
 }
 
 /* Chrome, Safari, Opera */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
-@layer base {
-  /* h1, */
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0; /* 브라우저 기본 마진 제거 */
-    font-size: inherit;
-    font-weight: inherit;
-  }
-
-  img {
-    display: block;
-  } /* baseline영향 xx */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @theme {
