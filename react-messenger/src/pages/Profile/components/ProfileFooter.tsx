@@ -1,3 +1,7 @@
+import ChatIcon from "@/assets/profile/profileChatting.svg?react";
+import EditIcon from "@/assets/profile/profileEdit.svg?react";
+import PungIcon from "@/assets/profile/profilePung.svg?react";
+
 type ActiveKey = "selfchat" | "edit" | "pung";
 
 export default function ProfileFooter({
@@ -7,23 +11,22 @@ export default function ProfileFooter({
   active?: ActiveKey;
   onTab?: (key: ActiveKey) => void;
 }) {
-  const tabs: { key: ActiveKey; src: string; alt: string }[] = [
-    {
-      key: "selfchat",
-      src: "/images/profile/profileChatting.svg",
-      alt: "나와의 채팅",
-    },
-    { key: "edit", src: "/images/profile/profileEdit.svg", alt: "프로필 편집" },
-    { key: "pung", src: "/images/profile/profilePung.svg", alt: "펑 보관함" },
+  const tabs: {
+    key: ActiveKey;
+    Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    alt: string;
+  }[] = [
+    { key: "selfchat", Icon: ChatIcon, alt: "나와의 채팅" },
+    { key: "edit", Icon: EditIcon, alt: "프로필 편집" },
+    { key: "pung", Icon: PungIcon, alt: "펑 보관함" },
   ];
 
   return (
-    <nav className="sticky bottom-0 w-[375px] bg-transparent">
+    <nav className="fixed bottom-0 inset-x-0 w-[375px] bg-transparent">
       <div className="rounded-t-[16px] bg-yellow-800">
         <div className="h-[108px] !px-[50px] !pt-7 pb-[env(safe-area-inset-bottom)]">
           <div className="grid grid-cols-3 h-14 w-full place-items-center">
             {tabs.map((t) => {
-              //const isActive = t.key === active;
               return (
                 <button
                   key={t.key}
@@ -34,10 +37,9 @@ export default function ProfileFooter({
                     "active:scale-95 transition",
                   ].join(" ")}
                 >
-                  <img
-                    src={t.src}
-                    alt={t.alt}
+                  <t.Icon
                     className="pointer-events-none opacity-100"
+                    role="img"
                   />
                 </button>
               );
