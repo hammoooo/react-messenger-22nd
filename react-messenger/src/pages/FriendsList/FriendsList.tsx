@@ -5,6 +5,8 @@ import type { User } from "@/types";
 import FriendsHeader from "./components/FriendsHeader";
 import MeCard from "./components/MeCard";
 import FriendsRow from "./components/FriendsRow";
+import Coupon from "@/assets/coupon.svg?react";
+import ProfileGift from "@/assets/profile/profileGift.svg?react";
 
 export default function FriendsList() {
   const init = useFriends((s) => s.init);
@@ -110,24 +112,32 @@ export default function FriendsList() {
               생일인 친구가 없어요
             </p>
           ) : (
-            birthday.map((f) => <FriendsRow key={f.id} f={f} />)
-          ))}
-        <button
-          type="button"
-          onClick={() => {
-            // TODO: router -> 선물하기 페이지
-          }}
-          className="!px-1 !py-1 
+            <div>
+              {birthday.map((f) => (
+                <FriendsRow key={f.id} f={f} />
+              ))}
+              <button
+                type="button"
+                onClick={() => {
+                  // TODO: router -> 선물하기 페이지
+                }}
+                className="!px-1 !pt-1 
       active:scale-[0.99] transition
     "
-        >
-          <img
-            src="/images/profile/profileGift.svg"
-            alt="gift"
-            className="block w-full h-auto pointer-events-none select-none"
-            draggable={false}
-          />
-        </button>
+              >
+                <ProfileGift role="img" />
+              </button>
+            </div>
+          ))}
+
+        <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-1" />
+      </div>
+
+      {/* 채널 */}
+      <div className="pt-1">
+        <FriendsHeader title="채널" collapsibleKey="channel" />
+        {!collapsed?.["channel"] && <Coupon role="img" />}
+        <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-2" />
       </div>
 
       {/* 그룹 섹션 */}
@@ -147,7 +157,7 @@ export default function FriendsList() {
               {!isCollapsed &&
                 list.map((f) => <FriendsRow key={`${key}-${f.id}`} f={f} />)}
             </section>
-            <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-2" />
+            <div className="w-[343px] h-px bg-gray-400 transform scale-y-50 !my-1" />
           </>
         );
       })}

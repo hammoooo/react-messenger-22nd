@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import ProfileLeftArrow from "@/../public/images/profile/profileLeftArrow.svg?react";
 
 export default function ProfileHeader() {
   const nav = useNavigate();
@@ -10,11 +11,12 @@ export default function ProfileHeader() {
         className="w-8 h-8 grid place-items-center active:scale-95 rounded"
         title="뒤로"
       >
-        <img
+        {/* <img
           src="/images/profile/profileLeftArrow.svg"
           alt=""
           className="w-5 h-5"
-        />
+        /> */}
+        <ProfileLeftArrow className="w-5 h-5" role="img" />
       </button>
 
       <div className="flex gap-x-3 ">

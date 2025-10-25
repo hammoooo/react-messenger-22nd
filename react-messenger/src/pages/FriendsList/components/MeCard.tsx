@@ -1,6 +1,7 @@
 import { useFriends } from "../../../store/friendsStore";
 //import Avatar from "../../../components/Avatar";
 import { Link } from "react-router-dom";
+import BigAvatar from "@/assets/bigAvatar.svg?react";
 
 export default function MeCard() {
   const me = useFriends((s) => s.me);
@@ -12,7 +13,8 @@ export default function MeCard() {
       className="flex items-center gap-3 px-4 py-2"
     >
       {/* <Avatar src={me.avatar} alt={me.name} /> */}
-      <img src="/images/bigAvatar.svg" alt={me.name} />
+      {/* <img src="/images/bigAvatar.svg" alt={me.name} /> */}
+      <BigAvatar className="h-10 w-10 shrink-0" role="img" />
       <div className="min-w-0 flex-1 mt-200">
         <p className="truncate text-[18px] font-semibold leading-tight text-gray-800">
           {me.name}
